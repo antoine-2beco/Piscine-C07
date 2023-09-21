@@ -1,38 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 17:10:10 by ade-beco          #+#    #+#             */
-/*   Updated: 2023/09/20 17:10:11 by ade-beco         ###   ########.fr       */
+/*   Created: 2023/09/21 10:19:22 by ade-beco          #+#    #+#             */
+/*   Updated: 2023/09/21 10:19:26 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 /*#include <stdio.h>*/
+#include <stdlib.h>
 
-char	*ft_strdup(char *src)
+int	*ft_range(int min, int max)
 {
-	char	*out;
-	int		i;
+	int	*ints;
+	int	i;
 
-	out = malloc(sizeof(src));
-	if (!out)
-		return (NULL);
 	i = 0;
-	while (src[i] != '\0')
+	ints = malloc ((max - min));
+	if (min >= max)
+		return (NULL);
+	if (!ints)
+		return (NULL);
+	while (min < max)
 	{
-		out[i] = src[i];
+		ints[i] = min;
+		min++;
 		i++;
 	}
-	out[i + 1] = '\0';
-	return (out);
+	return (ints);
 }
 
 /*int	main(void)
 {
-	char *src = "Hello World !";
-	printf("%s", ft_strdup(src));
+	int	i;
+
+	i = 0;
+	while (i != 10)
+	{
+		printf("%d", ft_range(-2, 8)[i]);
+		i++;
+	}
+	return (0);
 }*/
