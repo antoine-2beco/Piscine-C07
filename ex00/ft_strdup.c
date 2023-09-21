@@ -16,9 +16,15 @@
 char	*ft_strdup(char *src)
 {
 	char *out;
+	char *erno;
 	int	i;
 	
-	out = malloc(sizeof(src));
+	out = malloc(0);//sizeof(src)
+	if (!out)
+	{
+		erno = "ENONEM";
+		return (NULL);
+	}
 	i = 0;
 	while (src[i] != '\0')
 	{
