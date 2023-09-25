@@ -40,7 +40,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 	}
 	*range = ft_range(min, max);
 	if (!*range)
-		return (0);
+		return (-1);
 	return (max - min);
 }
 
