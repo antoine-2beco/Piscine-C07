@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-/*#include <stdio.h>*/
+// #include <stdio.h>
 
 int	ft_strlen(char *str)
 {
@@ -33,11 +33,11 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	i = 0;
 	k = 0;
 	l = 0;
+	if (size == 0)
+		return ("/0");
 	out = malloc(sizeof(strs) + (sizeof(sep) * (size - 1)));
 	if (!out)
 		return (NULL);
-	if (size == 0)
-		return ("\0");
 	while (i < size)
 	{
 		k = 0;

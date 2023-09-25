@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>*/
+#include <stdio.h>
 #include <stdlib.h>
 
 int	*ft_range(int min, int max)
@@ -19,9 +19,9 @@ int	*ft_range(int min, int max)
 	int	i;
 
 	i = 0;
-	ints = malloc (sizeof(int) * (max - min));
 	if (min >= max)
 		return (NULL);
+	ints = malloc (sizeof(int) * (max - min));
 	if (!ints)
 		return (NULL);
 	while (min < max)
@@ -38,9 +38,10 @@ int	*ft_range(int min, int max)
 	int	i;
 
 	i = 0;
+	ft_range(8, -2);
 	while (i != 10)
 	{
-		printf("%d", ft_range(-2, 8)[i]);
+		printf("%d", ft_range(8, -2));
 		i++;
 	}
 	return (0);
