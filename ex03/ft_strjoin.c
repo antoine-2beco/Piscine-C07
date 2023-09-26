@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 11:29:21 by ade-beco          #+#    #+#             */
-/*   Updated: 2023/09/26 18:55:40 by ade-beco         ###   ########.fr       */
+/*   Updated: 2023/09/26 21:56:29 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,11 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	i = 0;
 	k = 0;
 	l = 0;
+	if (size == 0)
+		return ("\0");
 	out = malloc(ft_malloclen(strs, sep, size));
 	if (!out)
 		return (NULL);
-	if (size == 0)
-		return (out);
 	while (i < size)
 	{
 		k = 0;
@@ -70,7 +70,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 
 /*int	main(void)
 {
-	int size = 4;
+	int size = 0;
 	char *strs[] = {"abc", "def", "jkl", "mno"};
 	char *sep = " - ";
 	printf("%s", ft_strjoin(size, strs, sep));
