@@ -49,14 +49,12 @@ char	*ft_convert_nbr_base(long a, char *base, char *res, int i)
 	int	l;
 
 	l = ft_strlen(base);
-	printf("base lenght : %d\n", l);
 	if (a < 0)
 	{
 		a = -a;
 		res[0] = '-';
 	}
 	i--;
-	printf("i lenght : %d\n", i);
 	while (a >= l)
 	{
 		res[i] = base[a % l];
@@ -78,7 +76,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	if (!(check_base(base_from)) || !(check_base(base_to)))
 		return (NULL);
 	res_lenght = ft_lenght_nbr(preres, base_to);
-	res = malloc(sizeof(char) * (res_lenght));
+	res = malloc(sizeof(char) * (res_lenght) + 1);
 	if (!res)
 		return (NULL);
 	res = ft_convert_nbr_base(preres, base_to, res, res_lenght);

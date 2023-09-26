@@ -35,7 +35,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	l = 0;
 	if (size == 0)
 		return ("/0");
-	out = malloc(sizeof(strs) + (sizeof(sep) * (size - 1)));
+	out = malloc(sizeof(strs) + (sizeof(sep) * (size - 1)) + 1);
 	if (!out)
 		return (NULL);
 	while (i < size)
