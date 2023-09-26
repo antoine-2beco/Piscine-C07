@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 11:29:21 by ade-beco          #+#    #+#             */
-/*   Updated: 2023/09/26 18:54:29 by ade-beco         ###   ########.fr       */
+/*   Updated: 2023/09/26 18:55:40 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_malloclen(char **strs, char *sep, int size)
 {
 	int	i;
 	int	k;
-	int lenght;
+	int	lenght;
 
 	i = 0;
 	k = 0;
