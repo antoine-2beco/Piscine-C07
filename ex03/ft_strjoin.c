@@ -6,12 +6,23 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 11:29:21 by ade-beco          #+#    #+#             */
-/*   Updated: 2023/09/26 21:56:29 by ade-beco         ###   ########.fr       */
+/*   Updated: 2023/09/27 11:13:54 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 /*#include <stdio.h>*/
+
+char	*ft_empty(void)
+{
+	char	*out;
+
+	out = malloc(sizeof(char));
+	if (!out)
+		return (NULL);
+	out[0] = '\0';
+	return (out);
+}
 
 int	ft_malloclen(char **strs, char *sep, int size)
 {
@@ -50,7 +61,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	k = 0;
 	l = 0;
 	if (size == 0)
-		return ("\0");
+		return (ft_empty());
 	out = malloc(ft_malloclen(strs, sep, size));
 	if (!out)
 		return (NULL);
@@ -70,7 +81,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 
 /*int	main(void)
 {
-	int size = 0;
+	int size = 3;
 	char *strs[] = {"abc", "def", "jkl", "mno"};
 	char *sep = " - ";
 	printf("%s", ft_strjoin(size, strs, sep));
